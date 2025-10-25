@@ -1,0 +1,203 @@
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 0.80rem;
+    background: linear-gradient(180deg, #132a44, #0e1d2d);
+    color: #f0f3f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin-bottom: 100px;
+  }
+  h2 {
+    color: #4685cd;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    font-weight: 600;
+  }
+  h3 {
+    color:  #ffffff;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-weight: 400;
+  }
+  .container {
+    background: #262c37;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    padding: 20px 20px;
+    margin-top: 20px;
+    /* width: 95%; */
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+  }
+/* Load Folder button */
+#fileInput {
+    display: none; /* Hide native file input */
+  }
+label[for="fileInput"] {
+    background: linear-gradient(135deg, #2f5581, #204165);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    width: max-content;
+    }
+/* Mouse-Over Load Folder button */    
+label[for="fileInput"]:hover {
+    background: linear-gradient(135deg, #5aa3ff, #268dff);
+    }
+/* Filenames */    
+#fileNames {
+    color: #a1a9b8;
+    font-family: monospace;
+    margin-bottom: 20px;
+    min-height: 1.4em;
+    }
+button {
+    background: linear-gradient(135deg, #2f5581, #204165);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 26px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 12px 12px 0;
+    transition: background-color 0.3s ease;
+    z-index: 96;        /* higher layer */
+    }
+    button:hover:not(:disabled) {
+        background: linear-gradient(135deg, #5aa3ff, #268dff);
+    }
+    button:disabled {
+        background: #555a6559;
+        cursor: not-allowed;
+        color: #ffffff3b;
+    }
+    button:active {
+    box-shadow: inset 0 0 0 1px #ffffff;
+    }
+/* Copy Debug Info Button */            
+.copy-button {
+    background: linear-gradient(135deg, #363f50, #2b3341);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin: 0;
+    transition: background-color 0.3s ease;
+    min-width: 150px;
+    z-index: 95;        /* higher layer */
+    }
+  .copy-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #363f50, #515e75);
+    }
+  .copy-button:disabled {
+    background: #262c37;
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.181);
+    }
+  .copy-button:active {
+    box-shadow: inset 0 0 0 1px #ffffff;
+    }
+/* Console Window */  
+.console-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0; /* enable flex shrinking */
+    }
+  #status {
+    flex-grow: 1;
+    min-height: 150px;
+    max-height: 100%;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #444a55;
+    padding: 15px;
+    background: #1b1e24;
+    font-family: monospace;
+    color: #00ff37a1;
+    white-space: pre-wrap; /* keep line breaks */
+    margin-bottom: 12px;
+    scrollbar-gutter: stable both-edges; /* reserve scrollbar space */
+    /* overflow-y: scroll; */             /* show scrollbar always */
+    /* scrollbar-width: thin;			/* Firefox */
+    /* scrollbar-color: #e24a4a #1b1e24;	/* Firefox */
+}
+
+/* Scrollbar WebKit-based browsers */
+#status::-webkit-scrollbar { width: 12px;}
+#status::-webkit-scrollbar-track {
+  background: #1b1e24; /* match console bg */
+  border-radius: 12px;
+}
+
+#status::-webkit-scrollbar-thumb {
+  background-color: #204165; /* subtle blue */
+  border-radius: 12px;
+  /* border: 3px solid #ffffff; /* add padding around thumb */
+}
+
+#status::-webkit-scrollbar-thumb:hover {
+  background-color: #268dff; /* brighter blue on hover */
+}
+
+
+
+
+    
+/* Download MIDI button */    
+#downloadBtn {
+    /* align-self: flex-end; */
+    margin-bottom: 0;
+    position: relative; /* or absolute if you want */
+    z-index: 100;        /* higher layer */
+    }
+/* Footer */    
+  .footer_container {
+    padding: 20px 20px;
+    /* margin-top: 20px; */
+    /* width: 95%; */
+    max-width: 700px;
+    /* display: flex; */
+    /* height: 75vh; */
+    flex-direction: column;
+  }
+footer {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 0.78rem;
+    color: #97a1bf;
+    text-align: center;
+    position: sticky; /* creates stacking context */
+    z-index: 1;         /* lower layer */
+    }
+/* Text Link anchers */  
+a {
+    color: #b1bde1;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0);
+    z-index: 99;        /* higher layer */
+    }
+/* Message color classes */
+  .msg-error { color: #ff4c4c; font-weight: bold; }
+  .msg-success { color: #4caf50; font-weight: bold; }
+  .msg-info { color: #a1a9b8; }    

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+  <title>Ableton XML to MIDI Converter</title>
+
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+  <script src="fflate.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Ableton XML to MIDI Converter</h2>
+
+    <p>
+      Select an Ableton project folder or any directory with .alc, .agr, .xml, .als, or .adv files. The tool scans
+      subfolders, extracts MIDI data, converts it to .mid, and saves everything as a zipped folder in your Downloads.
+      Ableton files are auto-decompressed if needed. Files without MIDI notes are skipped, and errors are shown in the
+      console. <br> Note: .alc, .agr give best results, and .als files may yield poor results. No files ever leave your
+      computer, nothing gets uploaded anywhere.
+    </p>
+
+    <label for="fileInput" tabindex="0">Select Project Folder</label>
+    <input type="file" id="fileInput" webkitdirectory="" directory="" multiple="">
+    
+    <div id="fileNames"> No folder selected </div>
+
+    <h3>
+      <span>Status Console</span>
+      <button id="copyBtn" class="copy-button" disabled="">Copy Debug Info</button>
+    </h3>
+
+    <div class="console-wrapper">
+      <div id="status">(No files processed yet...)</div>
+      <button id="downloadBtn" disabled="" style="margin-right: 0px;">
+        Download Converted Midi-Files as ZIP
+      </button>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer_container">
+      Powered by JavaScript and <a rel="nofollow noopener" class="reset interactable cursor-pointer decoration-1 underline-offset-1 text-super hover:underline font-semibold"
+        target="_blank" href="https://github.com/101arrowz/fflate?tab=MIT-1-ov-file#">
+        <span class="text-box-trim-both">FFLATE</span></a> - Latest Stable Edition<br>
+      This software reads Ableton XML files, but this project is not affiliated with or endorsed by Ableton AG.
+      “Ableton” and related trademarks are trademarks of Ableton AG and are used solely to refer to compatibility.
+    </div>
+  </footer>
+
+</body>
+
+</html>
